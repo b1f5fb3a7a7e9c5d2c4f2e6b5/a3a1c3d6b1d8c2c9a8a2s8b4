@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WinFormsMappingDecoder
 {
-    public partial class Form1 : Form
+    public partial class Replace : Form
     {
-        public Form1()
+        public Replace()
         {
             InitializeComponent();
+        }
+
+        private void Replace_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode & Keys.Escape) == Keys.Escape) Close();
         }
     }
 }
