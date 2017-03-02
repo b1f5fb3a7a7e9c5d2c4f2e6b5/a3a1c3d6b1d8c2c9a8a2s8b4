@@ -2,15 +2,7 @@
 {
     partial class Home
     {
-        /// <summary>
-        /// Обязательная переменная конструктора.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Освободить все используемые ресурсы.
-        /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,16 +13,12 @@
         }
 
         #region Код, автоматически созданный конструктором форм Windows
-
-        /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
-        /// </summary>
         private void InitializeComponent()
         {
             this.menu = new System.Windows.Forms.MenuStrip();
             this.menuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOpenFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveFile = new System.Windows.Forms.ToolStripMenuItem();
             this.separator = new System.Windows.Forms.ToolStripSeparator();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAlphabet = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +28,6 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxInfo = new System.Windows.Forms.RichTextBox();
-            this.menuSaveFile = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menu.SuspendLayout();
             this.status.SuspendLayout();
@@ -70,10 +57,18 @@
             // 
             // menuOpenFile
             // 
+            this.menuOpenFile.Enabled = false;
             this.menuOpenFile.Name = "menuOpenFile";
             this.menuOpenFile.Size = new System.Drawing.Size(152, 22);
             this.menuOpenFile.Text = "Open File";
             this.menuOpenFile.Click += new System.EventHandler(this.menuOpenFile_Click);
+            // 
+            // menuSaveFile
+            // 
+            this.menuSaveFile.Name = "menuSaveFile";
+            this.menuSaveFile.Size = new System.Drawing.Size(152, 22);
+            this.menuSaveFile.Text = "Save File";
+            this.menuSaveFile.Click += new System.EventHandler(this.menuSaveFile_Click);
             // 
             // separator
             // 
@@ -112,12 +107,14 @@
             // textBox
             // 
             this.textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox.DetectUrls = false;
+            this.textBox.HideSelection = false;
             this.textBox.Location = new System.Drawing.Point(3, 3);
             this.textBox.Name = "textBox";
+            this.textBox.ShortcutsEnabled = false;
             this.textBox.Size = new System.Drawing.Size(593, 377);
             this.textBox.TabIndex = 2;
             this.textBox.Text = "";
-            this.textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_KeyDown);
             this.textBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseUp);
             // 
             // tableLayoutPanel1
@@ -145,13 +142,6 @@
             this.textBoxInfo.TabIndex = 3;
             this.textBoxInfo.Text = "";
             // 
-            // menuSaveFile
-            // 
-            this.menuSaveFile.Name = "menuSaveFile";
-            this.menuSaveFile.Size = new System.Drawing.Size(152, 22);
-            this.menuSaveFile.Text = "Save File";
-            this.menuSaveFile.Click += new System.EventHandler(this.menuSaveFile_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,10 +152,12 @@
             this.Controls.Add(this.status);
             this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menu;
             this.MaximizeBox = false;
             this.Name = "Home";
             this.Text = "Mapping Decoder ";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Home_KeyDown);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.status.ResumeLayout(false);
@@ -178,19 +170,20 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem menuFile;
-        private System.Windows.Forms.ToolStripMenuItem menuExit;
-        private System.Windows.Forms.StatusStrip status;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
         private System.Windows.Forms.ToolStripMenuItem menuOpenFile;
-        private System.Windows.Forms.ToolStripSeparator separator;
-        private System.Windows.Forms.RichTextBox textBox;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem menuAlphabet;
-        private System.Windows.Forms.RichTextBox textBoxInfo;
         private System.Windows.Forms.ToolStripMenuItem menuSaveFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ToolStripSeparator separator;
+        private System.Windows.Forms.ToolStripMenuItem menuFile;
+        private System.Windows.Forms.ToolStripMenuItem menuExit;
+        private System.Windows.Forms.RichTextBox textBoxInfo;
+        private System.Windows.Forms.RichTextBox textBox;
+        private System.Windows.Forms.StatusStrip status;
+        private System.Windows.Forms.MenuStrip menu;
+        
     }
 }
